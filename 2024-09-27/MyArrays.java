@@ -31,6 +31,25 @@ public class MyArrays {
 		}
 		return(returnArray);
 	}
+	public static int[] concatArray(int[]ary1,int[]ary2) {
+	if (ary1.length == 0) {
+		return(ary2);
+		}
+	if (ary2.length == 0) {
+		return(ary1);
+	}
+		int[] returnArray = new int[ary1.length + ary2.length - 1]; 
+	
+		for (int i = 0; i < ary1.length; i++) {
+			 returnArray[i] = ary1[i];
+		}
+		for (int i = 0; i < ary2.length; i++) {
+			 returnArray[i + ary1.length - 1] = ary2[i];
+		}
+	return(returnArray);
+	}
+
+
 
 
 	public static void main (String arg[]) {
@@ -57,7 +76,15 @@ public class MyArrays {
 	System.out.println(convertArrayInt(arr7).equals(convertArrayInt(returnCopy(arr7))));
 	System.out.println(arr7 != returnCopy(arr7));
 	
-	
+	int[] arrTest1 = {1,2,3,4,5,6,7,8};
+	int[] arrTest2 = {1,2,3,4,5,6,7,8};
+	System.out.println(convertArrayInt(concatArray(arrTest1,arrTest2)));
+	int[] arrTest5 = {2,3,4,5,6};
+	int[] arrTest6 = {123343,5,56,6};
+	System.out.println(convertArrayInt(concatArray(arrTest5,arrTest6)));
+	int[] arrTest3 = new int[0];
+	int[] arrTest4 = new int[0];
+	System.out.println(convertArrayInt(concatArray(arrTest3,arrTest4)));
 	}
 
 }
