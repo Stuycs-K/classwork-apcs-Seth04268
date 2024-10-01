@@ -56,6 +56,9 @@ public static String arrToString(int[]ary){
   */
 public static String arrToString(int[][]ary){
   //this should use arrToString(int[])
+  if (ary.length == 0) {
+  return("[[]]");
+  }
   String returnn = "[";
   for(int i = 0; i < ary.length-1; i++){
     returnn += arrToString(ary[i]) + ", ";
@@ -66,6 +69,9 @@ public static String arrToString(int[][]ary){
 /*Return the sum of all of the values in the 2D array */
 
 public static int arr2DSum(int[][]nums){
+  if (nums.length == 0 || nums[0].length == 0) {
+  return(0);
+  }
   int sum = 0;
   for (int i = 0; i < nums.length; i++) {
     for (int k = 0; k < nums[i].length; k++) {
@@ -80,15 +86,31 @@ public static int arr2DSum(int[][]nums){
   * e.g. swapRC({{1,2,3},{4,5,6}}) returns {{1,4},{2,5},{3,6}}
   */
 public static int[][] swapRC(int[][]nums){
-  return new int[1][1];
+int numsLength = nums[0].length;
+int[][] returnArray = new int[numsLength][nums.length];
+ for (int i = 0; i < nums.length; i++) {
+ 	for (int k = 0; k < nums[i].length; k++) {
+ 	returnArray[k][i] = nums[i][k];
+ 	}
+  }
+  return returnArray;
 }
 
 public static void main (String[] args) {
   int[] testCase = {2,3,4,9};
   System.out.println(arrToString(testCase));
   int[][] testCase1 = new int[][] {{2,3,4,9}, {2,3,4,9}, {2,3,4,9}};
+  int [][] testCaseVoid = new int[0][0]; 
+  int [][] testCase2 = {{1,2,3},{4,5,6}};
+  int [][] testCase3 = {{1,2,3,4,5,6,7,8},{4,5,6,7,8,9,10,11},{2,3,4,5,6,7,8,9}};
   System.out.println(arrToString(testCase1));
+  System.out.println(arrToString(testCaseVoid));
+  System.out.println(arrToString(testCase3));
   System.out.println(arr2DSum(testCase1));
+  System.out.println(arr2DSum(testCaseVoid));
+  System.out.println(arr2DSum(testCase3));
+  System.out.println(arrToString(swapRC(testCase2)));
+  System.out.println(arrToString(swapRC(testCase3)));
 }
 
 }
