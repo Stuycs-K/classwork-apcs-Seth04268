@@ -15,7 +15,7 @@ for (int i = 0; i < convertString.length; i++) {
 return(returnString + "]");
 }
 
-public static String convertArrayString(String[] convertString) {
+public static String arrToString(String[] convertString) {
 String returnString = "[";
 for (int i = 0; i < convertString.length; i++) {
   if (i < convertString.length - 1) {
@@ -106,10 +106,31 @@ public static void replaceNegative(int[][] vals){
 //DO NOT use any built in methods that "copy" an array.
 //You SHOULD write a helper method for this.
 //If you don't see a good way to do that, you should stop and look at prior methods.
-public static int[][] copy(int[][] nums){
-  int[][] returnArray = new int[nums.length][nums[0].length];
+public static int[] returnCopy(int[] ary) {
+		int[] returnArray = new int[ary.length];
+		for (int i = 0; i < ary.length; i++) {
+			 returnArray[i] = ary[i];
+		}
+		return(returnArray);
 }
-
+public static int[][] copy(int[][] nums){
+	int[][] realEmptyArray = new int[0][0];
+	int[] EmptyArray = new int[0];
+	if (nums.length == 0) {
+	return(realEmptyArray);
+	}
+	int[][] returnArray = new int[nums.length][nums[0].length];
+	for (int i = 0; i < nums.length; i++) {
+	if (nums[0].length != 0) {
+	returnArray[i] = returnCopy(nums[i]);
+	}
+	else {
+	returnArray[i] = EmptyArray;
+	}
+	}
+	return(returnArray);
+	
+}
 /**Rotate an array by returning a new array with the rows and columns swapped.
   * You may assume the array is rectangular and neither rows nor cols is 0.
   * e.g. swapRC({{1,2,3},{4,5,6}}) returns {{1,4},{2,5},{3,6}}
@@ -131,6 +152,7 @@ public static void main (String[] args) {
   int[][] testCase1 = new int[][] {{2,3,4,9}, {2,3,4,9}, {2,3,4,9}};
   int [][] testCaseVoid = new int[0][0];
   int [][] testCase2 = {{1,2,3},{4,5,6}};
+  int [][] testCaseVoidPartial = {{1,-2,3,4,-5,6,-7,-8},{},{-2,3,-4,5,-6,7,-8,9}};
   int [][] testCase3 = {{1,-2,3,4,-5,6,-7,-8},{4,-5,6,-7,8,-9,10,11},{-2,3,-4,5,-6,7,-8,9}};
   System.out.println(arrToString(testCase1));
   System.out.println(arrToString(testCaseVoid));
@@ -138,9 +160,20 @@ public static void main (String[] args) {
   System.out.println(arr2DSum(testCase1));
   System.out.println(arr2DSum(testCaseVoid));
   System.out.println(arr2DSum(testCase3));
+  System.out.println(arr2DSum(testCaseVoidPartial));
   System.out.println(arrToString(swapRC(testCase2)));
   System.out.println(arrToString(swapRC(testCase3)));
+  System.out.println(arrToString(copy(testCase2)));
+  System.out.println(arrToString(copy(testCaseVoidPartial)));
+  System.out.println(arrToString(copy(testCaseVoid)));
+  System.out.println(arrToString(copy(testCase3)));
+  replaceNegative(testCase2);
+  replaceNegative(testCaseVoid);
+  replaceNegative(testCaseVoidPartial);
   replaceNegative(testCase3);
+  System.out.println(arrToString(testCase2));
+  System.out.println(arrToString(testCaseVoid));
+  System.out.println(arrToString(testCaseVoidPartial));
   System.out.println(arrToString(testCase3));
 
 }
