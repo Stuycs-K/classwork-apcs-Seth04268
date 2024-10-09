@@ -1,27 +1,3 @@
-public class ArrayMethodsDemo {
-   //compare the two methods:
-
-   //One just modifies a parameter, and needs no return value
-   public static void modify(int[]nums){
-      nums[0] = -99;
-   }
-
-   //The other creates a new array and does require a return value
-   public static int[] createArray(int[]nums){
-      int[]ans = new int[nums.length];
-      ans[0] = 6666;
-      return ans;
-   }
-
-   public static void main(String[] args) {
-      int [] values = {1,2,3,4,5};
-      //create a new array and change it:
-      int [] values2 = createArray(values);
-      //modify an existing array:
-      modify(values);
-
-   }
-}
 
 
 import java.util.Arrays;
@@ -36,26 +12,68 @@ public class ArrayDemo{
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
   public static String arrToString(int[]ary){
-    return "";
+  String returnString = "[";
+	for (int i = 0; i < ary.length; i++) {
+	  if (i < ary.length - 1) {
+		returnString += ary[i] + ", ";
+		}
+	else  {
+		returnString += ary[i];
+		}
+	}
+	return(returnString + "]");
+
   }
 
   //The name of different methods can be the same,
   //as long as the parameters are different! (type and/or quantity must be different)
   //Pro tip: you should be using your 1D arrToString in this method!
   public static String arrToString(int[][]ary){
-    return "";
+  String returnString = "[";
+  for (int i = 0; i < ary.length; i++) {
+  	arrToString(ary[i]);
+  }	
+    return(returnString + "]");
   }
 
   //1. Calculate and return how many elements equal zero in the 2D array.
   public static int countZeros2D(int[][] nums){
-    return 0;
+    int zeroCount = 0;
+    if (nums.length == 0) {
+    return(zeroCount);
+    }
+    for (int i = 0; i < nums.length; i++) {
+    	if (nums[i].length != 0) {
+    	for (int k = 0; k < nums[i].length; i++) {
+    		if (nums[i][k] == 0) {
+    		 zeroCount += 1;
+    		}
+    	
+    	}
+      }
+    }
+    return (zeroCount);
   }
 
   //2. Calculate the sum of a 2d array
   /*Return the sum of all of the values in the 2D array
    *Use a nested loop instead of a helper method*/
   public static int arr2DSum(int[][]nums){
-    return 0;
+    int sum = 0;
+    if (nums.length == 0) {
+    return(0);
+    }
+    for (int i = 0; i < nums.length; i++) {
+    	if (nums[i].length != 0) {
+    	for (int k = 0; k < nums[i].length; i++) {
+    		if (nums[i][k] == 0) {
+    		 sum += nums[i][k];
+    		}
+    	
+    	}
+      }
+    }
+    return (sum);
   }
 
   //3. Modify a given 2D array of integer as follows:
@@ -63,9 +81,21 @@ public class ArrayDemo{
   //-When the row number is the same as the column number replace
   //that negative with the value 1
   //-All other negatives replace with 0
-  public static void replaceNegative(int[][] vals){
-
+public static void replaceNegative(int[][] vals){
+  for(int i = 0; i < vals.length; i++){
+    for(int k = 0; k < vals[i].length; k++){
+      if(vals[i][k] < 0){
+         if(i == k){
+           vals[i][k] = 1;
+         }
+         else{
+           vals[i][k] = 0;
+         }
+      }
+    }
   }
+}
+
 
   //4. Make a copy of the given 2d array.
   //When testing : make sure that changing the original does NOT change the copy.
