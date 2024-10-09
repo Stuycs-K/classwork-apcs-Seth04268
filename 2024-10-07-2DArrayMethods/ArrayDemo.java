@@ -159,53 +159,61 @@ int[][] returnArray = new int[numsLength][nums.length];
     //You can now use Arrays.toString(yourArray) instead of writing arrayToString again.
     //Compare Arrays.toString(yourArray) to YOUR arrayToString() method to make sure yours is correct
     //do not use any other Arrays.method()
-	  int[] testCase = {2,3,4,9};
-int[][] testCase1 = new int[][] {{2,3,4,9}, {2,3,4,9}, {2,3,4,9}};
+	  int[] testCaseForSingleDArrayFull = {2,3,4,9};
+	  int[] testCaseForSingleDArrayEmpty = {};
+int[][] testCaseFull = new int[][] {{2,3,4,9}, {2,3,4,9}, {2,3,4,9}};
   int [][] testCaseVoid = new int[0][0];
   int [][] testCase2 = {{1,2,3},{4,5,6}};
-    int [][] testCase8 = {{1,2,3},{},{4,5,6}};
+    int [][] testCaseOneSkipFull = {{1,2,3},{},{4,5,6}};
   int [][] testCaseVoidPartial = {{1,-2,3,4,-5,6,-7,-8},{},{-2,3,-4,5,-6,7,-8,9}};
-  int [][] testCase3 = {{1,-2,3,4,-5,6,-7,-8},{4,-5,6,-7,8,-9,10,11},{-2,3,-4,5,-6,7,-8,9}};
+  int [][] testCaseBunchOfNumbers = {{1,-2,3,4,-5,6,-7,-8},{4,-5,6,-7,8,-9,10,11},{-2,3,-4,5,-6,7,-8,9}};
 System.out.println("arrToString test");
 System.out.println("\n");
-System.out.println(arrToString(testCase1));
+System.out.println(arrToString(testCaseFull));
   System.out.println(arrToString(testCaseVoid));
-  System.out.println(arrToString(testCase3));
+    System.out.println(arrToString(testCaseVoidPartial));
+  System.out.println(arrToString(testCaseOneSkipFull));
+  System.out.println("Array To String Actual Method");
+  System.out.println("\n");
+System.out.println(Arrays.toString(testCaseForSingleDArrayFull));
+  System.out.println(Arrays.toString(testCaseForSingleDArrayEmpty));
+    System.out.println(arrToString(testCaseForSingleDArrayFull));
+  System.out.println(arrToString(testCaseForSingleDArrayEmpty));
   System.out.println("\n");
  System.out.println("arr2DSum test");
-  System.out.println(arr2DSum(testCase1));
+  System.out.println(arr2DSum(testCaseFull));
   System.out.println(arr2DSum(testCase2));
     System.out.println(arr2DSum(testCaseVoid));
-    System.out.println(arr2DSum(testCase8));
-  System.out.println(arr2DSum(testCase3));
+    System.out.println(arr2DSum(testCaseOneSkipFull));
+  System.out.println(arr2DSum(testCaseOneSkipFull));
   System.out.println(arr2DSum(testCaseVoidPartial));
   System.out.println("\n");
   System.out.println("swapRC");
   System.out.println(arrToString(swapRC(testCase2)));
-  System.out.println(arrToString(swapRC(testCase3)));
+  System.out.println(arrToString(swapRC(testCaseBunchOfNumbers)));
   System.out.println("\n");
   System.out.println("copy");
   System.out.println(arrToString(copy(testCase2)));
   System.out.println(arrToString(copy(testCaseVoidPartial)));
   System.out.println(arrToString(copy(testCaseVoid)));
-  System.out.println(arrToString(copy(testCase3)));
+  System.out.println(arrToString(copy(testCaseOneSkipFull)));
       System.out.println("\n");
   System.out.println("HTML Table Function");
    System.out.println(htmlTable(testCase2));
   System.out.println(htmlTable(testCaseVoid));
   System.out.println(htmlTable(testCaseVoidPartial));
-  System.out.println(htmlTable(testCase3));
+  System.out.println(htmlTable(testCaseOneSkipFull));
 
   replaceNegative(testCase2);
   replaceNegative(testCaseVoid);
   replaceNegative(testCaseVoidPartial);
-  replaceNegative(testCase3);
+  replaceNegative(testCaseOneSkipFull);
   System.out.println("\n");
 System.out.println("replaceNegative");
   System.out.println(arrToString(testCase2));
   System.out.println(arrToString(testCaseVoid));
   System.out.println(arrToString(testCaseVoidPartial));
-  System.out.println(arrToString(testCase3));
+  System.out.println(arrToString(testCaseOneSkipFull));
 
   }
 }
