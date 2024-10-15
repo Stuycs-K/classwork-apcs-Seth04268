@@ -17,11 +17,20 @@ public class Demo{
     Point p1 = new Point(1,1);
     Point p2 = new Point(-1,-1);
     Point p3 = new Point(3,4);
+    Point pO = new Point(0,0);
     Point p6 = new Point(p3);
     System.out.println(p6);
-    System.out.println( p3);
+    System.out.println(p3);
     System.out.println(distance(p1,p2));
     System.out.println(Point.distance(p1,p2));
     System.out.println(p1.distanceTo(p2));
+    System.out.println(Point.distance(pO,p3));
+    System.out.println(distance(pO,p3));
+    System.out.println(pO.distanceTo(p3));
+    System.out.println(Point.distance(p6,p3));
+    System.out.println(distance(p6,p3));
+    System.out.println(p6.distanceTo(p3));
+
+
   }
 }
