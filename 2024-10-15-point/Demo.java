@@ -19,6 +19,10 @@ public class Demo{
     Point p3 = new Point(3,4);
     Point pO = new Point(0,0);
     Point p6 = new Point(p3);
+    Point equilateral1 = new Point(-.5,0);
+    Point equilateral2 = new Point(.5,0);
+    Point equilateral3 = new Point(0,Math.sqrt(3) / 2);
+
     System.out.println(p6);
     System.out.println(p3);
     System.out.println(distance(p1,p2));
@@ -30,6 +34,9 @@ public class Demo{
     System.out.println(Point.distance(p6,p3));
     System.out.println(distance(p6,p3));
     System.out.println(p6.distanceTo(p3));
+    System.out.println(Point.distance(equilateral1,equilateral2));
+    System.out.println(distance(equilateral2,equilateral3));
+    System.out.println(equilateral2.distanceTo(equilateral3));
 
 
   }
