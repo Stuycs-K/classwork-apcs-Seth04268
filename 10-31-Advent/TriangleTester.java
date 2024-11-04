@@ -10,9 +10,11 @@ class TriangleTester {
 
 
   public static int countTrianglesA(String filename) {
+    File file = new File("inputTri.txt");//1
     int triangleCount = 0;
     int triangleNumberChecker = 0;
-    Scanner scannerForAdvent = new Scanner (filename);
+    Scanner scannerForAdvent = new Scanner(file);
+    System.out.println(scannerForAdvent.hasNextInt());
     while (scannerForAdvent.hasNextInt()) {
       int[] intList = new int[3];
       if (triangleNumberChecker == 3) {
