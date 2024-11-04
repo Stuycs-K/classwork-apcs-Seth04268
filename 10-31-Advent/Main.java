@@ -1,9 +1,9 @@
-import java.util.Scanner;
-import java.io.FileNotFoundException;
-import java.io.File;
+
 class Main {
     public static void main(String[] args) {
-    Scanner scannerForAdvent = new Scanner ("");
+
+    System.out.println(TriangleTester.countTrianglesA("inputTri.txt"));
+    /*
     Scanner sc1 = new Scanner("This is a bunch of words");
     while (sc1.hasNext()) {
       System.out.println(sc1.next());
@@ -15,4 +15,6 @@ class Main {
     }
     System.out.println(sum);
     }
+    */
   }
+}
