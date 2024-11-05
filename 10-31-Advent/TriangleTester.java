@@ -10,24 +10,63 @@ class TriangleTester {
 
 
   public static int countTrianglesA(String filename) {
-    File file = new File("inputTri.txt");//1
+
+
+    try {
+    File file = new File(filename);//1
     int triangleCount = 0;
+    int[] intList = new int[3];
     int triangleNumberChecker = 0;
     Scanner scannerForAdvent = new Scanner(file);
-    System.out.println(scannerForAdvent.hasNextInt());
     while (scannerForAdvent.hasNextInt()) {
-      int[] intList = new int[3];
+    intList[triangleNumberChecker] = scannerForAdvent.nextInt();
+    triangleNumberChecker += 1;
       if (triangleNumberChecker == 3) {
         if (checkTriangle(intList)) {
           triangleCount += 1;
         }
         triangleNumberChecker = 0;
       }
-      else {
-        intList[triangleNumberChecker] = scannerForAdvent.nextInt();
-        triangleNumberChecker += 1;
+    }
+    scannerForAdvent.close();
+    return triangleCount;
+    }
+    catch (FileNotFoundException ex) {
+      //File not found what should you do?
+      System.out.println("File not found");
+      return 1000000;
+    }
+
+  }
+  
+  
+  
+  public static int countTrianglesB(String filename) {
+      try {
+    File file = new File(filename);//1
+    int triangleCount = 0;
+    int[] intList = new int[3];
+    int triangleNumberChecker = 0;
+    Scanner scannerForAdvent = new Scanner(file);
+    while (scannerForAdvent.hasNextInt()) {
+    intList[triangleNumberChecker] = scannerForAdvent.nextInt();
+    triangleNumberChecker += 1;
+      if (triangleNumberChecker == 3) {
+        if (checkTriangle(intList)) {
+          triangleCount += 1;
+        }
+        triangleNumberChecker = 0;
       }
     }
+    scannerForAdvent.close();
     return triangleCount;
+    }
+    catch (FileNotFoundException ex) {
+      //File not found what should you do?
+      System.out.println("File not found");
+      return 1000000;
+    }
+
+  
   }
 }
