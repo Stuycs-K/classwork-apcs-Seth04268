@@ -55,7 +55,7 @@ class TriangleTester {
             }
             scannerForAdvent.close();
             int triangleCount = 0;
-             for (int i = 0; i <= twoDintForRows.size() - 3; i += 3) {
+             for (int i = 0; i < twoDintForRows.size(); i += 3) {
                 for (int c = 0; c < 3; c++) {
                     int[] intList = new int[3];
                     intList[0] = twoDintForRows.get(i)[c];    
