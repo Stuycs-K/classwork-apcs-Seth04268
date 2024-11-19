@@ -21,7 +21,8 @@ public class problemSolver {
   int distanceLeft = 0;
   int distanceRight = 0;
   for (int i = 0; i < data.length; i++) {
-
+    String latestTurn = data[i].substring(0,1);
+    int latestDistance = data[i].substring(1);
   }
 }
   public static void main (String[] args) {
