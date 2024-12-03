@@ -22,7 +22,9 @@ public class ColorDemo {
       System.out.print("\u001b[38;2;"+r+";"+g+";"+b+";7m.");
     }
   public static void BlueWave(int range) {
-    for (int i = 0; i < range)
+    for (int i = 0; i < range; i++ {
+      
+    }
   }
 
 
