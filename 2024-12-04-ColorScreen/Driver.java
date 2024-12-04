@@ -101,7 +101,7 @@ for (int k = 0; k < rangeG; k++) {
 
 public static void main(String[] args) {
 reset();
-Border(20, 30, "o");
+Border(80, 30, "o");
 
 }
 }
