@@ -48,18 +48,43 @@ public static void wait(int millis){
 public static void go(int row,int col){
     System.out.print("\033[" + row + ";" + col + "H");
 }
-public static void Border(int length, int width, String charachter) {
- for (int i = 0; i < length; i++) {
-   int randNumr = (int) (Math.random() * 257);
-   int randNumg = (int) (Math.random() * 257);
-   int randNumb = (int) (Math.random() * 257);
-   colorRGB(randNumr,randNumg,randNumb)
-   System.out.print(charachter);
- }
- for (int k = 0; k < height; k++) {
-   
- }
+public static void randomColor() {
+int randNumr;
+int randNumg;
+int randNumb;
+
+int randNumbr = (int) (Math.random() * 257);
+int randNumbg = (int) (Math.random() * 257);
+int randNumbb = (int) (Math.random() * 257);
+colorRGB(randNumbr,randNumbg,randNumbb);
 }
+public static void Border(int length, int height, String charachter) {
+  for (int y = 1; y < height; y++) {
+  for (int x = 1; x < length; x++) {
+if (x == 1 || y == 1 || y == height - 1 || x == length - 1) {
+   if (x == 1 || y == 1 || y == height - 1) {
+   randomColor();
+   System.out.print(charachter);
+   
+   }
+
+   else if (x == length - 1) {
+   randomColor();
+   System.out.println(charachter);
+   
+   }
+   }
+    else {
+   System.out.print(" ");
+   }
+ 
+  // if (x == length - 1) {
+   //System.out.println();
+   //}
+  }
+}
+ }
+
 //this function will fill your terminal with a bunch of meaningless text if you create too large a range
   public static void freezeWave(int rangeR, int rangeG, int rangeB, int wavelength,String waveCharachter) {
 String wave = "";
@@ -78,6 +103,8 @@ for (int k = 0; k < rangeG; k++) {
 
 public static void main(String[] args) {
 reset();
+Border(20, 30, "o");
 
 }
 }
+
