@@ -59,25 +59,23 @@ int randNumbb = (int) (Math.random() * 257);
 colorRGB(randNumbr,randNumbg,randNumbb);
 }
 public static void Border(int length, int height, String charachter) {
-  for (int y = 1; y < height; y++) {
-  for (int x = 1; x < length; x++) {
-if (x == 1 || y == 1 || y == height - 1 || x == length - 1) {
-   if (x == 1 || y == 1 || y == height - 1) {
+  for (int y = 0; y < height; y++) {
+  for (int x = 0; x < length; x++) {
+//if (x == 1 || y == 1 || y == height - 1 || x == length - 1) {
+   if (x == 0 || y == 0 || y == height-1 || x == length - 1) {
    randomColor();
    System.out.print(charachter);
-   
-   }
 
-   else if (x == length - 1) {
-   randomColor();
-   System.out.println(charachter);
-   
+     }else {
+    System.out.print(" ");
+    }
+
+   if (x == length - 1) {
+   System.out.println();
    }
-   }
-    else {
-   System.out.print(" ");
-   }
- 
+//   }
+
+
   // if (x == length - 1) {
    //System.out.println();
    //}
@@ -107,4 +105,3 @@ Border(20, 30, "o");
 
 }
 }
-
