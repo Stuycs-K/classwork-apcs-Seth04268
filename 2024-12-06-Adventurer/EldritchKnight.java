@@ -12,7 +12,15 @@ public EldritchKnight(String name, int HP, int eldritchEnergyMax) {
   this.eldritchEnergyMax = eldritchEnergyMax;
 }
 public EldritchKnight(String name) {
-  super(name, 3000 + (int) (Math.random() * 2000));
+  //original numbers were 2000 and 3000
+  super(name, 12 + (int) (Math.random() * 4));
+  this.eldritchEnergy = 20;
+  this.eldritchEnergyMax = 20;
+
+}
+public EldritchKnight(String name) {
+  //original numbers were 2000 and 3000
+  super("Seth", 12 + (int) (Math.random() * 4));
   this.eldritchEnergy = 20;
   this.eldritchEnergyMax = 20;
 
@@ -39,7 +47,7 @@ return eldritchEnergyMax;
 */
 //hurt or hinder the target adventurer
 public String attack(Adventurer other) {
-  int returnNumber = (int) (1000 + Math.random() * 750);
+  int returnNumber = (int) (4 + Math.random() * 2);
   other.applyDamage(returnNumber);
   return (getName() + " has attacked " + other.getName() + "dealing " + returnNumber + " points of damage");
 }
@@ -52,9 +60,9 @@ public String support(Adventurer other) {
 
 }
 
-//heall or buff self
+//heal or buff self
 public String support() {
-  int returnNumber = getHP() + (int) (1000 + Math.random() * 1000);
+  int returnNumber = getHP() + (int) (4 + Math.random() * 4);
   setHP(returnNumber);
   return (getName() + " has healed " + "themselves " + "for " + returnNumber + " points of hp");
 
@@ -62,9 +70,14 @@ public String support() {
 
 //hurt or hinder the target adventurer, consume some special resource
 public String specialAttack(Adventurer other) {
-int returnNumber = 3000;
-return getName() + " uses Domain Of The Elder Gods dealing " + returnNumber + " points of damage";
-
-
+  if (getSpecial() >= 10) {
+int returnNumber = 8;
+setSpecial(getSpecial() - 10);
+other.applyDamage(returnNumber);
+return getName() + " uses Domain Of The Elder Gods dealing " + returnNumber + " points of damage " + other.getName() + " has " + other.getHP() + " health points left";
+}
+else {
+  return getName() + " only has " + getSpecial() + " use a normal attack instead.";
+}
 }
 }

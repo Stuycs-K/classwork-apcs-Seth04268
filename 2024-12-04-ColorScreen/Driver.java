@@ -8,9 +8,19 @@ public static final int Blue = 34;
 public static final int Magenta = 35;
 public static final int Cyan = 36;
 public static final int White = 37;
+public static final int BrightGreen = 92;
+public static final int BrightRed = 91;
 public static final String CLEAR_SCREEN =  "\u001b[2J";
 public static final String HIDE_CURSOR =  "\u001b[?25l";
 public static final String SHOW_CURSOR =  "\u001b[?25h";
+ public static int[] genRandomArray(int length) {
+  int[] returnArray = new int[length];
+  for (int i = 0; i < length; i++) {
+  returnArray[i] = (int) (Math.random() * 99);
+}
+  return returnArray;
+  
+  }
 
 
 public static void reset() {
@@ -102,6 +112,22 @@ for (int k = 0; k < rangeG; k++) {
 public static void main(String[] args) {
 reset();
 Border(80, 30, "o");
+int[] intArray = genRandomArray(3);
+for (int i = 0; i < intArray.length; i++) {
+if (intArray[i] < 25) {
+color(BrightRed,30);
+System.out.println(intArray[i]);
+}
+else if (intArray[i] > 75) {
+color(BrightGreen,30);
+System.out.println(intArray[i]);
+}
 
+else {
+reset();
+System.out.println(intArray[i]);
+} 
+}
+go(31,0);
 }
 }
