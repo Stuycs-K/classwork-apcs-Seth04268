@@ -77,7 +77,6 @@ public class CodeWarrior extends Adventurer{
     return this+" drinks a coffee to restores "+restoreSpecial(6)+" "
     + getSpecialName()+ " and "+hp+" HP";
   }
-}
 
 
 

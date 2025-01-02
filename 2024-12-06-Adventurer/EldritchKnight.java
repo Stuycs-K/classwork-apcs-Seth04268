@@ -18,7 +18,7 @@ public EldritchKnight(String name) {
   this.eldritchEnergyMax = 20;
 
 }
-public EldritchKnight(String name) {
+public EldritchKnight() {
   //original numbers were 2000 and 3000
   super("Seth", 12 + (int) (Math.random() * 4));
   this.eldritchEnergy = 20;
@@ -49,7 +49,7 @@ return eldritchEnergyMax;
 public String attack(Adventurer other) {
   int returnNumber = (int) (4 + Math.random() * 2);
   other.applyDamage(returnNumber);
-  return (getName() + " has attacked " + other.getName() + "dealing " + returnNumber + " points of damage");
+  return (getName() + " has attacked " + other.getName() + " dealing " + returnNumber + " points of damage");
 }
 
 //heall or buff the target adventurer
