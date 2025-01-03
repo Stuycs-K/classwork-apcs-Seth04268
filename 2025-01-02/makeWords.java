@@ -11,6 +11,6 @@ makeWords(remainingLetters - 1, result + alphabet.substring(i,i+1), alphabet);
 
 }
 public static void main(String[] args) {
-  makeWords(2, "", "abcdefghijk");
+  makeWords(4, "", "abcdefghijk");
 }
 }
